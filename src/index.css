@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+}
+body {
+  background: radial-gradient(circle, #56ab2f, #a8e063 350px);
+}
+
+li span.active {
+  font-weight: bold;
+}
+
+li span.active::before {
+  content: ">";
+  position: relative;
+  top: -2px;
+  margin-right: 6px;
+  transform: scale(0.8, 1);
+  display: inline-block;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.model {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.model button {
+  color: #444;
+  border-color: #444;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.model p {
+  color: #444;
+  font-weight: bold;
+}
+
+.loader {
+  width: 10px;
+  height: 10px;
+  margin: 40px auto;
+  border-radius: 50%;
+  background: white;
+}
+
+@layer components {
+  .active {
+    @apply text-red-500;
+  }
+
+  .btn {
+    @apply py-4 px-16 border-2 border-white rounded-full mt-4;
+  }
+
+  .step {
+    @apply text-2xl font-medium border-b-[1px] border-b-white py-2 mb-4;
+  }
+  .step1 {
+    @apply text-2xl font-medium  py-2 mb-4;
+  }
+
+  .list {
+    @apply text-xl pl-4 py-2 cursor-pointer;
+  }
+}
